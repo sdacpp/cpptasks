@@ -8,7 +8,7 @@ class OddEvenSorter
 	const short int NUMBERS_TO_GENERATE = 50;
 	const short int NUMBER_RANGE = 100;
 
-	std::vector<int> evens;
+	std::vector<int> numbers;
 	std::vector<int> odds;
 
 	void generateRandomNumbers();
