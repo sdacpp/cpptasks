@@ -5,8 +5,8 @@
 class RectangleManager
 {
 private:
-	const __int16 MAX_RANGE = 10;
-	const __int16 NUMBER_OF_RECTANGLES = 100;
+	const uint8_t MAX_RANGE = 10;
+	const uint8_t NUMBER_OF_RECTANGLES = 100;
 	std::vector<Rectangle> rectangles;
 	std::vector<Rectangle> squares;
 

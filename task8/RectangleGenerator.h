@@ -5,6 +5,6 @@
 class RectangleGenerator
 {
 public:
-	static Rectangle generateRectangle(const __int16 range);
+	static Rectangle generateRectangle(const uint8_t range);
 };
 

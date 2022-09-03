@@ -3,11 +3,11 @@
 class Rectangle
 {
 private:
-	__int16  _x;
-	__int16  _y;
+	uint8_t  _x;
+	uint8_t  _y;
 
 public:
-	Rectangle(__int16 x, __int16 y)
+	Rectangle(uint8_t x, uint8_t y)
 		: _x(x), _y(y)
 	{
 	}

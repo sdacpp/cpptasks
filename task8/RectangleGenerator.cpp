@@ -3,13 +3,13 @@
 #include <algorithm> 
 #include <random>
 
-Rectangle RectangleGenerator::generateRectangle(const __int16 range) {
+Rectangle RectangleGenerator::generateRectangle(const uint8_t range) {
 	std::random_device r;
 	std::default_random_engine defEngine(r()); 
-	std::uniform_int_distribution<__int16> intDistro(0, range);
+	std::uniform_int_distribution<uint8_t> intDistro(0, range);
 
-	__int16 x = intDistro(defEngine);
-	__int16  y = intDistro(defEngine);
+	uint8_t x = intDistro(defEngine);
+	uint8_t  y = intDistro(defEngine);
 
 	return Rectangle(x, y);
 }
