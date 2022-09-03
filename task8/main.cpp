@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <algorithm>
 #include "RectangleManager.h";
 /*
 Zadanie 8
@@ -17,9 +18,17 @@ e) void deleteInvalid() Usuń wszystkie prostokąty, które mają przynajmniej j
 int main() {
 
 	RectangleManager rectangleManager;
+	const __int16 AREA_SIZE = 50;
+	size_t count = rectangleManager.countRectangleAreaBiggerThan(AREA_SIZE);
+	std::cout << "Number of bigger areas: " << count << std::endl;
+	auto squares = rectangleManager.copySquares();
+
+	//rectangleManager.printRectangles();
+	rectangleManager.sortAreaDescending();
 	rectangleManager.printRectangles();
-	size_t count = rectangleManager.countRectangleAreaBiggerThan(50);
-	std::cout << "Number of bigger areas: " << count;
+
+	rectangleManager.deleteInvalid();
+	
 
 	return 0;
 }

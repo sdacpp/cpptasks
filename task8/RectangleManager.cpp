@@ -28,8 +28,25 @@ size_t RectangleManager::countRectangleAreaBiggerThan(int area) {
 	);
 };
 std::vector<Rectangle> RectangleManager::copySquares() {
-	std::vector<Rectangle> vc;
-	return vc;
+	//Przekopiuj wszystkie prostkąty, które są kwadratami do drugiego vectora(copy_if) i go wypisz(for_each)
+	std::vector<Rectangle> squares;
+	std::copy_if(rectangles.begin(), rectangles.end(), std::back_inserter(squares), 
+		[](Rectangle rect) {
+			return rect.isSquare();
+		});
+	return squares;
 };
-void  RectangleManager::sortAreaDescending() {};
-void  RectangleManager::deleteInvalid() {};
+
+void  RectangleManager::sortAreaDescending() {
+	//  Posortuj vector prostokątów malejaco według pola powierzchni
+	std::sort(rectangles.begin(), rectangles.end(), [](Rectangle rect1, Rectangle rect2) {
+		return rect1.getArea() < rect2.getArea();
+	});
+};
+
+void  RectangleManager::deleteInvalid() {
+	// Usuń wszystkie prostokąty, które mają przynajmniej jeden bok równy 0
+	rectangles.erase(std::remove_if(rectangles.begin(), rectangles.end(), [](auto rect) {
+		int area = rect.getArea();
+		return rect.getArea() == 0;
+		}), rectangles.end());
