@@ -3,11 +3,11 @@
 class Rectangle
 {
 private:
-	uint8_t  _x;
-	uint8_t  _y;
+	unsigned short int  _x;
+	unsigned short int  _y;
 
 public:
-	Rectangle(uint8_t x, uint8_t y)
+	Rectangle(unsigned short int x, unsigned short int y)
 		: _x(x), _y(y)
 	{
 	}

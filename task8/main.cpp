@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <algorithm>
 #include "RectangleManager.h";
+
 /*
 Zadanie 8
 Klasy: Rectangle(przechowuje długości boków, wylicza pole, isSquare()), 
@@ -18,7 +19,7 @@ e) void deleteInvalid() Usuń wszystkie prostokąty, które mają przynajmniej j
 int main() {
 
 	RectangleManager rectangleManager;
-	const uint8_t AREA_SIZE = 50;
+	const unsigned short int AREA_SIZE = 50;
 	size_t count = rectangleManager.countRectangleAreaBiggerThan(AREA_SIZE);
 	std::cout << "Number of bigger areas: " << count << std::endl;
 	auto squares = rectangleManager.copySquares();
@@ -28,6 +29,9 @@ int main() {
 	rectangleManager.printRectangles();
 
 	rectangleManager.deleteInvalid();
+
+	rectangleManager.printRectangles();
+
 	
 
 	return 0;

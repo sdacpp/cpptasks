@@ -10,7 +10,8 @@ void RectangleManager::initialize() {
 void RectangleManager::generateRectangles() {
 	// Utwórz wektor 100 prostokątów o losowych długościach boków z przedziału 0, 10 (użyj liczb całkowitych)
 	for (int i = 0; i < NUMBER_OF_RECTANGLES; i++) {
-		rectangles.push_back(RectangleGenerator::generateRectangle(MAX_RANGE));
+		RectangleGenerator rc(0, MAX_RANGE);
+		rectangles.push_back(rc.generateRectangle());
 	}
 }
 
@@ -19,7 +20,7 @@ void RectangleManager::printRectangles() {
 	std::for_each(rectangles.begin(), rectangles.end(), [](auto rect) { rect.print(); });
 };
 
-size_t RectangleManager::countRectangleAreaBiggerThan(int area) {
+size_t RectangleManager::countRectangleAreaBiggerThan(unsigned short int area) {
 	// Wypisz ile jest prostokątów o polu większym niż 50 (count_if)
 	return std::count_if(rectangles.begin(), rectangles.end(),
 		[&](Rectangle rect) {
@@ -50,3 +51,4 @@ void  RectangleManager::deleteInvalid() {
 		int area = rect.getArea();
 		return rect.getArea() == 0;
 		}), rectangles.end());
+}
