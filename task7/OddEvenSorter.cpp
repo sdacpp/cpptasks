@@ -31,13 +31,18 @@ void OddEvenSorter::generateRandomNumbers() {
 
 bool sortAscending(int i, int j) { return (i < j); }
 
+void OddEvenSorter::mergeVectors() {
+	numbers.insert(numbers.end(), odds.begin(), odds.end());
+}
+
 void OddEvenSorter::sortVectors() {
 	std::sort(numbers.begin(), numbers.end(), sortAscending);
 	std::sort(odds.begin(), odds.end(), sortAscending);
+
+	mergeVectors();
 }
 
 void OddEvenSorter::displayNumbers() {
-	numbers.insert(numbers.end(), odds.begin(), odds.end());
 	for (auto num : numbers) std::cout << num << ' ';
 }
 

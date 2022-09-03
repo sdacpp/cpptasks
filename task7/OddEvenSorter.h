@@ -14,14 +14,13 @@ class OddEvenSorter
 	void generateRandomNumbers();
 	void sortVectors();
 	void initialize();
+	void mergeVectors();
 
 
 public:
 	OddEvenSorter();
-	~OddEvenSorter() {
-	}
+	~OddEvenSorter();
 
 	void displayNumbers();
-
 };
 
