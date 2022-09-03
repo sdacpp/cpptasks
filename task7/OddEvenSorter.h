@@ -19,8 +19,9 @@ class OddEvenSorter
 
 public:
 	OddEvenSorter();
-	~OddEvenSorter();
+	~OddEvenSorter() {};
 
 	void displayNumbers();
+
 };
 
