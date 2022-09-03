@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+/zadanie4/.vs/zadanie4
+/.vs/gitrepos/v17
+/.vs
+/zadanie4/x64/Debug
+/*/x64
