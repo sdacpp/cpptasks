@@ -1,10 +1,15 @@
-#include "Rectangle.h"
+﻿#include "Rectangle.h"
+#include <iostream>
+
+void Rectangle::print() {
+	std::cout << "Rectangle: x = " << _x << ", y = " << _y << std::endl;
+} 
 
 bool Rectangle::isSquare() {
-	return x == y;
+	return _x == _y;
 }
 
 
 unsigned int Rectangle::getArea() {
-	return x * y;
+	return _x * _y;
 }
